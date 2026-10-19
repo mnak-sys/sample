@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>簡単おみくじアプリ</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 100px; background-color: #f4f4f9; }
+        .card { background: white; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #ff6b6b; color: white; border: none; border-radius: 5px; margin-top: 20px; }
+        button:hover { background-color: #ee5253; }
+        #result { font-size: 24px; font-weight: bold; margin-top: 20px; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>今日の運勢は？</h1>
+        <button onclick="drawOmikuji()">おみくじを引く</button>
+        <div id="result">ここに結果が出るよ</div>
+    </div>
+
+    <script>
+        function drawOmikuji() {
+            const results = ["大吉 🎉", "中吉 🌟", "小吉 🍀", "吉 💡", "末吉 🍵", "凶 💧"];
+            const random = Math.floor(Math.random() * results.length);
+            document.getElementById("result").innerText = results[random];
+        }
+    </script>
+</body>
+</html>
